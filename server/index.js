@@ -15,13 +15,25 @@ app.use(cors());
 // mongoose setup
 
 const PORT = 6001;
-mongoose.connect('mongodb+srv://riteshk19229:igxmkXX6AIVWXVWR@cluster0.vstrf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', { 
-        // useNewUrlParser: true,
-        // useUnifiedTopology: true,
-    },
-    console.log("Database connected....")
-).then(()=>{
+//yXrA9QOaveRoSQ5J
+// mongoose.connect('mongodb+srv://riteshk19229:yXrA9QOaveRoSQ5J@cluster0.tyqlk.mongodb.net/', {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true 
+// },
 
+//     console.log("Database connected....")
+// ).then(()=>{
+
+
+
+    mongoose.connect('mongodb+srv://riteshk19229:yXrA9QOaveRoSQ5J@cluster0.tyqlk.mongodb.net/', {
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+    }).then(() => {
+        console.log("Database connected...");
+    }).catch(err => {
+      
+    
     // All the client-server activites
 
 
@@ -91,7 +103,7 @@ mongoose.connect('mongodb+srv://riteshk19229:igxmkXX6AIVWXVWR@cluster0.vstrf.mon
         }
     })
 
-    // reject flight operator
+    // reject flight operatorc
 
     app.post('/reject-operator', async(req, res)=>{
         const {id} = req.body;
